@@ -10,11 +10,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import java.lang.IllegalArgumentException
 
+/**
+ * Base fragment with ViewBinding and ViewModel instances
+ * */
 abstract class BaseWithViewModelFragment<VB: ViewBinding, VM: ViewModel>(
     private val bindingInflater: (inflater: LayoutInflater) -> VB
 ): Fragment() {
 
-    open var useSharedViewModel: Boolean = false
+    open var useSharedViewModel: Boolean = false  // allow choice for Activity scoped ViewModel if true
 
     private lateinit var _sharedViewModel: VM
     protected abstract fun getViewModelClass(): Class<VM>
@@ -60,10 +63,10 @@ abstract class BaseWithViewModelFragment<VB: ViewBinding, VM: ViewModel>(
     private fun init() {
         _sharedViewModel = if (useSharedViewModel) {
             ViewModelProvider(requireActivity()).get(
-                getViewModelClass()
+                getViewModelClass()  // Activity scope
             )
         } else {
-            ViewModelProvider(this).get(getViewModelClass())
+            ViewModelProvider(this).get(getViewModelClass())  // Fragment scope
         }
     }
 
