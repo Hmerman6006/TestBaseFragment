@@ -11,8 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_nextFragment"
-            app:destination="@id/nextFragment" />
+            android:id="@+id/action_homeFragment_to_noViewModelFragment"
+            app:destination="@id/noViewModelFragment" />
     </fragment>
     <fragment
         android:id="@+id/nextFragment"
@@ -20,7 +20,25 @@
         android:label="fragment_next"
         tools:layout="@layout/fragment_next" >
         <action
-            android:id="@+id/action_nextFragment_to_homeFragment"
+            android:id="@+id/action_nextFragment_to_sharedFragment2"
+            app:destination="@id/sharedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sharedFragment"
+        android:name="co.za.orodata.testbasefragment.SharedFragment"
+        android:label="fragment_shared"
+        tools:layout="@layout/fragment_shared" >
+        <action
+            android:id="@+id/action_sharedFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noViewModelFragment"
+        android:name="co.za.orodata.testbasefragment.NoViewModelFragment"
+        android:label="fragment_no_view_model"
+        tools:layout="@layout/fragment_no_view_model" >
+        <action
+            android:id="@+id/action_noViewModelFragment_to_nextFragment"
+            app:destination="@id/nextFragment" />
     </fragment>
 </navigation>

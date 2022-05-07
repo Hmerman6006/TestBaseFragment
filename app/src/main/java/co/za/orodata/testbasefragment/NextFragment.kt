@@ -21,7 +21,7 @@ class NextFragment: BaseWithViewModelFragment<FragmentNextBinding, SharedViewMod
         // Navigate to next
         binding.backBtn.setOnClickListener {
             sharedViewModel.saveGossip(binding.etNext.text.toString())
-            findNavController().navigate(R.id.action_nextFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_nextFragment_to_sharedFragment2)
         }
 
         sharedViewModel.gossip.observe(viewLifecycleOwner, { gossip ->

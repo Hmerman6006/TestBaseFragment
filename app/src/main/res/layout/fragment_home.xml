@@ -24,7 +24,20 @@
         android:layout_marginLeft="@dimen/base_margin"
         android:layout_marginRight="@dimen/base_margin"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change text to view shared viewmodel"
+        android:textColor="@color/teal_700"
+        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginRight="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHome"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/start_order_btn"
@@ -32,12 +45,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/base_margin"
         android:layout_marginEnd="@dimen/base_margin"
-        android:text="Next"
+        android:text="Go to No View Model"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHome"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.604" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
